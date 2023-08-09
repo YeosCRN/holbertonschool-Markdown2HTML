@@ -5,16 +5,15 @@
 - Second argument is the output file name, makes no change'''
 import sys
 
-def main(*args):
-    # takes an argument of 2 strings
-    x = len(sys.argv)
+# takes an argument of 2 strings
+x = len(sys.argv)
 
-    if x <= 2:
-        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
-        exit (1)
-    if sys.argv[1] != "README.md":
-        print("Missing <filename>", file=sys.stderr)
-        exit (1)
-
-if __name__=="__main__":
-    main(sys.argv)
+if x <= 2:
+    print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
+    exit (1)
+try:
+    file = open(sys.argv[1])
+    file.close()
+except:
+    print("Missing ", sys.argv[1])
+    exit(1)
