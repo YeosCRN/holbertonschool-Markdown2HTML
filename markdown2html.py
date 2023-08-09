@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-# A script markdown2html.py that takes an argument of 2 strings:
-# First argument is the name of the Markdown file
-# Second argument is the output file name, makes no change
+'''A script markdown2html.py that takes an argument of 2 strings:
+- First argument is the name of the Markdown file
+- Second argument is the output file name, makes no change'''
 import sys
 
 def main(*args):
