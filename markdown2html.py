@@ -16,7 +16,7 @@ def main(*args):
         file = open(sys.argv[1])
         file.close()
     except:
-        print("Missing ", sys.argv[1])
+        print("Missing", sys.argv[1])
         exit(1)
 
 if __name__=="__main__":
