@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-'''A script markdown2html.py that takes an argument of 2 strings:
-- First argument is the name of the Markdown file
-- Second argument is the output file name, makes no change'''
+
+"""A script markdown2html.py that takes an argument of 2 strings."""
+
+"""- First argument is the name of the Markdown file
+- Second argument is the output file name, makes no change"""
+
 import sys
 import markdown
 
 # Function to convert Markdown to HTML
 def main(*args):
-    # takes an argument of 2 strings
+    """Take an argument of 2 strings."""
     x = len(sys.argv)
 
     if x <= 2:
