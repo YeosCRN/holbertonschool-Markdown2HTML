@@ -16,8 +16,10 @@ def main(*args):
         file = open(sys.argv[1], 'r')
         og_text = file.read()
         copy_text = markdown.markdown(og_text)
+        file.close()
         with open(sys.argv[2], 'w') as f:
             f.write(copy_text)
+        f.close()
     except:
         print("Missing", sys.argv[1], file=sys.stderr)
         exit(1)
