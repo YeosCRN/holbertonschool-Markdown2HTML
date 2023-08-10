@@ -4,6 +4,7 @@
 - First argument is the name of the Markdown file
 - Second argument is the output file name, makes no change'''
 import sys
+import markdown
 
 def main(*args):
     # takes an argument of 2 strings
@@ -13,8 +14,12 @@ def main(*args):
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         exit (1)
     try:
-        file = open(sys.argv[1])
-        file.close()
+        file = open(sys.argv[1], 'r')
+        og_text = file.read()
+        copy_text = markdown.markdown(og_text)
+        with open(sys.argv[2], 'w') as f:
+            f.write(copy_text)
+        return True
     except:
         print("Missing", sys.argv[1], file=sys.stderr)
         exit(1)
